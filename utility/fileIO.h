@@ -33,7 +33,7 @@ unique_ptr< vector<T> > readFile(string filePath, char delimiter) {
             if (tokenStream.fail()) {
                 throw runtime_error("Failed to convert token to the specified type.\n");
             }
-            result.push_back(value);
+            (*result).push_back(value);
         }
     }
 
