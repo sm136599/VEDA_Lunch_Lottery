@@ -46,4 +46,20 @@ unique_ptr< vector< vector<T> > > readFile(string filePath, char delimiter) {
     return result;
 }
 
+template <class T>
+void writeFile(string filePath, char delimiter, vector< vector<T> > data) {
+    ofstream fout(filePath);
+
+    if (!fout) throw runtime_error("Error opening file for writing.\n");
+
+    for (const auto& row : data) {
+        for (const auto& item : row) {
+            fout << item << delimiter;
+        }
+        fout << '\n';
+    }
+
+    fout.close();
+}
+
 #endif // FILEIO_H
