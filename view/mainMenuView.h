@@ -5,7 +5,7 @@
 
 class MainMenuView : public IView {
 public:
-    virtual void display() override;
+    virtual void display(const Community* comm) override;
 };
 
 #endif

@@ -1,9 +1,7 @@
-#include <iostream>
-
-using namespace std;
-
 #include "shuffleView.h"
 
-void ShuffleView::display() {
-
+void ShuffleView::display(const Community* comm) {
+    string title = "섞기";
+    vector<string> options = {};
+    IView::displayMenu(title, options, comm);
 }

@@ -1,9 +1,8 @@
-#include <iostream>
-
-using namespace std;
-
 #include "classCreationView.h"
 
-void display() {
-    
+void ClassCreationView::display(const Community* comm) {
+    string title = "반 생성";
+    vector<string> options = {"기수", "반", "종료"};
+    IView::displayMenu(title, options, comm);
 }
+

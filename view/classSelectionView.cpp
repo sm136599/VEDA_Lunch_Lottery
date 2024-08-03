@@ -1,10 +1,7 @@
-#include <iostream>
-
-using namespace std;
-
 #include "classSelectionView.h"
 
-    
-void ClassSelectionView::display() {
-
+void ClassSelectionView::display(const Community* comm) {
+    string title = "반 선택";
+    vector<string> options = {"종료"};
+    IView::displayMenu(title, options, comm);
 }
