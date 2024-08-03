@@ -1,11 +1,8 @@
-#include <iostream>
+#include "headers.h"
 
-using namespace std;
-
-int main() {
-    cout << "Hi, Hello, 안녕\n";
-
-    // TODO
-
-    return 0;
+int main(void) {
+    system("chcp 65001");
+    Community* community = new Community();
+    Controller controller(community);
+    controller.run();
 }
