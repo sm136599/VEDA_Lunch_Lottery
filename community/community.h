@@ -3,19 +3,26 @@
 #include <iostream>
 #include <string>
 #include <vector>
+
 using namespace std;
+
+//#include "../headers.h"
+#include "../utility/fileIO.h"
+
 class Community {
 private:
     string cohort;  // 기수
-    string group;   // 반
-    vector<string> students;            //파일입출력으로 불러올거   
-    vector<vector<string>> prevParty;   //불러온거를 다시 쪼개서 넣을거?
+    string group;   // 반  
+    unique_ptr< vector< vector<string> > > originalData;
+    vector<vector<string>> groupedData;
+    //vector<string> students;            //파일입출력으로 불러올거   
+    //vector<vector<string>> prevParty;   //불러온거를 다시 쪼개서 넣을거?
 public:
     Community();
     // 파일에서 데이터 불러오기
-    void loadStudents();
+    unique_ptr< vector< vector<string> > > loadStudents();
     // 랜덤 파티 생성
-    void makeParty();
+    vector<vector<string>> makeParty();
     // 파티 저장
     void saveParty();
 

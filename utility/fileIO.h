@@ -10,11 +10,12 @@
 #include <stdexcept>
 #include <memory>
 #include <sstream>
+#include <algorithm>
 
 using namespace std;
 
 template <class T>
-unique_ptr< vector< vector<T> > > readFile(string filePath, char delimiter) {
+unique_ptr< vector< vector<T> > > readFile(string filePath, char delimiter) {   //filepath : "file이름" , delimiter : '\t' <-탭 
     ifstream fin;
     fin.open(filePath);
 
@@ -44,6 +45,16 @@ unique_ptr< vector< vector<T> > > readFile(string filePath, char delimiter) {
     fin.close();
 
     return result;
+}
+
+//벡터 시프트 (->)
+template <class T>
+void shiftRight(vector<T>& row, int shift){
+    int size=row.size();
+    if(shift==0) return;    //shift가 0일때
+    shift %= size;          //shift가 row벡터 크기보다 큰 경우
+    rotate(row.begin(), row.end() - shift, row.end());
+    
 }
 
 template <class T>

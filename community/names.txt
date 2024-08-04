@@ -1,0 +1,4 @@
+apple   train   bike    animal  pencil
+cake    parent  toliet  ball    trash
+sharp   stick   erase   water   phone
+mouse   shirt   stop    remove  spoon
