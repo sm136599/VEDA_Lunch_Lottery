@@ -131,4 +131,5 @@ void Controller::processShuffle() {
     cout << "섞기 실행" << endl;
     // community->makeParty();
     pause;
+    setView(mainMenuView);
 }
