@@ -13,7 +13,7 @@ class Community {
 private:
     string cohort;  // 기수
     string group;   // 반  
-    unique_ptr< vector< vector<string> > > originalData;
+    //unique_ptr< vector< vector<string> > > originalData;  //함수에서 직접 선언
     vector<vector<string>> groupedData;
     //vector<string> students;            //파일입출력으로 불러올거   
     //vector<vector<string>> prevParty;   //불러온거를 다시 쪼개서 넣을거?

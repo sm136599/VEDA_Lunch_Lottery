@@ -1,5 +1,6 @@
 #include "controller.h"
 
+
 Controller::Controller() {
     this->community = new Community();
     mainMenuView = new MainMenuView();
@@ -49,7 +50,7 @@ void Controller::processMainMenu() {
 void Controller::processClassCreation() {
     cout << "반 생성 실행" << endl;
     string cmd;
-    cin >> cmd;
+    cin >> cmd;  
 }
 void Controller::processClassSelection() {
     cout << "반 선택 실행" << endl;
