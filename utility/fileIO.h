@@ -14,7 +14,7 @@
 using namespace std;
 
 template <class T>
-unique_ptr< vector< vector<T> > > readFile(string filePath, char delimiter) {
+unique_ptr< vector< vector<T> > > readFile(string& filePath, char delimiter) {
     ifstream fin;
     fin.open(filePath);
 
@@ -23,7 +23,6 @@ unique_ptr< vector< vector<T> > > readFile(string filePath, char delimiter) {
     auto result = make_unique< vector< vector<T> > >();
 
     string line, token;
-    int idx = 0;
     while (getline(fin, line)) {
         stringstream lineStream(line);
         vector<T> row;
@@ -47,7 +46,7 @@ unique_ptr< vector< vector<T> > > readFile(string filePath, char delimiter) {
 }
 
 template <class T>
-void writeFile(string filePath, char delimiter, vector< vector<T> > data) {
+void writeFile(string& filePath, char delimiter, vector< vector<T> > data) {
     ofstream fout(filePath);
 
     if (!fout) throw runtime_error("Error opening file for writing.\n");
@@ -61,5 +60,7 @@ void writeFile(string filePath, char delimiter, vector< vector<T> > data) {
 
     fout.close();
 }
+
+vector<string> readFileNames(const string& directoryPath);
 
 #endif // FILEIO_H
