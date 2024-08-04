@@ -8,8 +8,8 @@ class Community {
 private:
     string cohort;  // 기수
     string group;   // 반
-    vector<string> students;
-    vector<vector<string>> prevParty;
+    vector<string> students;            //파일입출력으로 불러올거   
+    vector<vector<string>> prevParty;   //불러온거를 다시 쪼개서 넣을거?
 public:
     Community();
     // 파일에서 데이터 불러오기

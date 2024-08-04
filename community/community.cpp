@@ -7,8 +7,8 @@ using namespace std;
 #include "community.h"
 
 Community::Community() {
-    cohort = "";
-    group = "";
+    cohort = "";    // 
+    group = "";     // 
 }
 
 void Community::loadStudents() {
