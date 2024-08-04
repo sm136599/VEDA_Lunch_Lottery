@@ -13,7 +13,7 @@ Community::Community() {
 //학생 파일 불러오기
 unique_ptr< vector< vector<string> > > Community::loadStudents() {
     string filePath="names.txt";
-    char delimiter='\t';
+    char delimiter=' ';
     unique_ptr< vector< vector<string> > > originalData = readFile<string>(filePath, delimiter);    //이차원 벡터 data에 파일 내용 넣기, readfile은 포인터니까 *붙여주자
     return originalData;
 }
@@ -49,7 +49,7 @@ vector<vector<string>> Community::makeParty() {
 // 파티 저장
 void Community::saveParty() {
     string filePath="random_lottery_result.txt";
-    char delimiter='\t';
+    char delimiter=' ';
     writeFile(filePath, delimiter, groupedData); 
 }
 

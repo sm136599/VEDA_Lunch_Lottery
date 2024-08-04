@@ -30,3 +30,5 @@ int main() {
 
     return 0;
 }
+
+//g++ -g -std=c++17 -o test.exe test.cpp community.h community.cpp  <- 컴파일할때 이걸로!
