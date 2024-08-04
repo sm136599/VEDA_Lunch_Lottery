@@ -34,3 +34,30 @@ VEDA_Lunch_Lottery는 그룹 내에서 무작위로 식사 조를 만들어주�
 - 회사 내 팀 빌딩 활동
 - 대규모 컨퍼런스나 워크숍의 네트워킹 세션
 - 동아리나 소셜 그룹의 활동 조직
+
+## 프로젝트 구조
+```
+project_root/
+├── community/
+│   ├── community.cpp
+│   ├── community.h
+│   └── communityHeader.h
+├── controller/
+│   ├── controller.cpp
+│   ├── controller.h
+│   └── controllerHeader.h
+├── utility/
+│   └── fileIO.h
+└── view/
+    ├── classCreationView.cpp
+    ├── classCreationView.h
+    ├── classSelectionView.cpp
+    ├── classSelectionView.h
+    ├── iView.cpp
+    ├── iView.h
+    ├── mainMenuView.cpp   
+    ├── mainMenuView.h
+    ├── shuffleView.cpp   
+    ├── shuffleView.h
+    └── viewHeader.h
+```
