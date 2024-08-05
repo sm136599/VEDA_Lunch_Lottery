@@ -91,7 +91,7 @@ void Controller::processClassCreation() {
             string fileName = "./data/" + community->getCohort() + "_" + community->getGroup() + ".csv";
             ofstream fout; 
             fout.open(fileName);
-            fout << "# 데이터 입력" << endl;
+            fout << "# 데이터 입력 (지우고 작성해주세요)" << endl;
             fout.close();
             cout << fileName << " 생성 완료" << endl;
             pause;
@@ -130,6 +130,8 @@ void Controller::processClassSelection() {
 void Controller::processShuffle() {
     cout << "섞기 실행" << endl;
     // community->makeParty();
+    // 만들어진 파티 보여주기
+    // community->showParty();
     pause;
     setView(mainMenuView);
 }
