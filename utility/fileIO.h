@@ -46,16 +46,6 @@ unique_ptr< vector< vector<T> > > readFile(string& filePath, char delimiter) {
     return result;
 }
 
-//���� ����Ʈ (->)
-template <class T>
-void shiftRight(vector<T>& row, int shift){
-    int size=row.size();
-    if(shift==0) return;    //shift�� 0�϶�
-    shift %= size;          //shift�� row���� ũ�⺸�� ū ���
-    rotate(row.begin(), row.end() - shift, row.end());
-    
-}
-
 template <class T>
 void writeFile(string& filePath, char delimiter, vector< vector<T> > data) {
     ofstream fout(filePath);
