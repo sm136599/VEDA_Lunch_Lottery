@@ -40,7 +40,6 @@ void Controller::processInput() {
     }
 }
 void Controller::processMainMenu() {
-    cout << "메인메뉴 실행" << endl;
     int cmd;
     cin >> cmd;
     fflush(stdin);
@@ -64,7 +63,6 @@ void Controller::processMainMenu() {
     }
 }
 void Controller::processClassCreation() {
-    cout << "반 생성 실행" << endl;
     int cmd;
     cin >> cmd;
     fflush(stdin);
@@ -75,7 +73,7 @@ void Controller::processClassCreation() {
             // 기수 입력
             cout << "기수 입력 >> ";
             string cohort; cin >> cohort;
-            // community.setCohort(cohort);
+            community->setCohort(cohort);
             setView(classCreationView);
             break;
         }
@@ -83,7 +81,7 @@ void Controller::processClassCreation() {
             // 반 입력
             cout << "반 입력 >> ";
             string group; cin >> group;
-            // community.setGroup(group);
+            community->setGroup(group);
             setView(classCreationView);
             break;
         }
@@ -105,14 +103,12 @@ void Controller::processClassCreation() {
     }
 }
 void Controller::processClassSelection() {
-    cout << "반 선택 실행" << endl;
     int cmd;
     cin >> cmd;
     fflush(stdin);
     if (cin.fail()) cout << "다시 입력해주세요" << endl;
     // 파일 이름: 기수_반.csv
-    //vector<string> files = getFileNames("./data");
-    vector<string> files;
+    vector<string> files = readFileNames("./data");
     if (cmd == files.size() + 1) setView(mainMenuView);
     else {
         // community 멤버 변수에 기수, 반 입력
@@ -121,18 +117,34 @@ void Controller::processClassSelection() {
         string cohort, group;
         cohort = fileName.substr(0, fileName.find('_'));
         group = fileName.substr(fileName.find('_') + 1);
-        // community.setCohort(cohort);
-        // community.setGroup(group);
-        // community->loadStudents();
+        community->setCohort(cohort);
+        community->setGroup(group);
+        community->loadStudents();
         setView(classSelectionView);
     }
 
 }
 void Controller::processShuffle() {
-    cout << "섞기 실행" << endl;
-    // community->makeParty();
+    community->makeParty();
     // 만들어진 파티 보여주기
-    // community->showParty();
+    vector< vector<string> > party = community->getParty();
+    cout << "======지난 주======" << endl;
+    for (int i = 0;i < party.size(); i++) {
+        cout << i + 1 << "조 : ";
+        for (const auto& person : party[i]) {
+            cout << person << ", ";
+        }
+        cout << endl;
+    }
+    cout << "======이번 주======" << endl;
+    party = community->getNextParty();
+    for (int i = 0;i < party.size(); i++) {
+        cout << i + 1 << "조 : ";
+        for (const auto& person : party[i]) {
+            cout << person << ", ";
+        }
+        cout << endl;
+    }
     pause;
     setView(mainMenuView);
 }
