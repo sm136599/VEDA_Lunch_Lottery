@@ -5,4 +5,6 @@ int main(void) {
     Community* community = new Community();
     Controller controller(community);
     controller.run();
+
+    return 0;
 }

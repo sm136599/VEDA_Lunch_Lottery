@@ -1,5 +1,6 @@
 #include "controller.h"
 
+
 Controller::Controller() {
     this->community = new Community();
     mainMenuView = new MainMenuView();
