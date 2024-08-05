@@ -15,7 +15,7 @@
 using namespace std;
 
 template <class T>
-unique_ptr< vector< vector<T> > > readFile(string filePath, char delimiter) {   //filepath : "fileÀÌ¸§" , delimiter : '\t' <-ÅÇ 
+unique_ptr< vector< vector<T> > > readFile(string& filePath, char delimiter) {
     ifstream fin;
     fin.open(filePath);
 
@@ -24,7 +24,6 @@ unique_ptr< vector< vector<T> > > readFile(string filePath, char delimiter) {   
     auto result = make_unique< vector< vector<T> > >();
 
     string line, token;
-    int idx = 0;
     while (getline(fin, line)) {
         stringstream lineStream(line);
         vector<T> row;
@@ -47,18 +46,18 @@ unique_ptr< vector< vector<T> > > readFile(string filePath, char delimiter) {   
     return result;
 }
 
-//º¤ÅÍ ½ÃÇÁÆ® (->)
+//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® (->)
 template <class T>
 void shiftRight(vector<T>& row, int shift){
     int size=row.size();
-    if(shift==0) return;    //shift°¡ 0ÀÏ¶§
-    shift %= size;          //shift°¡ rowº¤ÅÍ Å©±âº¸´Ù Å« °æ¿ì
+    if(shift==0) return;    //shiftï¿½ï¿½ 0ï¿½Ï¶ï¿½
+    shift %= size;          //shiftï¿½ï¿½ rowï¿½ï¿½ï¿½ï¿½ Å©ï¿½âº¸ï¿½ï¿½ Å« ï¿½ï¿½ï¿½
     rotate(row.begin(), row.end() - shift, row.end());
     
 }
 
 template <class T>
-void writeFile(string filePath, char delimiter, vector< vector<T> > data) {
+void writeFile(string& filePath, char delimiter, vector< vector<T> > data) {
     ofstream fout(filePath);
 
     if (!fout) throw runtime_error("Error opening file for writing.\n");
@@ -72,5 +71,7 @@ void writeFile(string filePath, char delimiter, vector< vector<T> > data) {
 
     fout.close();
 }
+
+vector<string> readFileNames(const string& directoryPath);
 
 #endif // FILEIO_H
