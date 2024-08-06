@@ -1,7 +1,12 @@
 #ifndef _CONTROLLER_H
 #define _CONTROLLER_H
 
-#include "../headers.h"
+#include "../community/community.h"
+#include "../view/iView.h"
+#include "../view/mainMenuView.h"
+#include "../view/classCreationView.h"
+#include "../view/classSelectionView.h"
+#include "../view/shuffleView.h"
 
 class Controller {
     IView* currentView;

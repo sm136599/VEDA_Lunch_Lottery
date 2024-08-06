@@ -4,15 +4,18 @@
 #include <fstream>
 #include <string>
 #include <vector>
-#include <conio.h>
-#include <windows.h>
-
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 using namespace std;
 
 #include "../community/communityHeader.h"
 
+#ifdef _WIN32
 #define cls system("cls")
 #define pause system("pause")
+#else
+#define cls system("clear")
+#define pause system("read -n 1 -s -p \"Press any key to continue...\"; echo")
+#endif
 
 class IView {
 public:
