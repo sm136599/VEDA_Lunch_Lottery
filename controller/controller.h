@@ -15,6 +15,7 @@ class Controller {
     ClassCreationView* classCreationView;
     ClassSelectionView* classSelectionView;
     ShuffleView* shuffleView;
+    bool getIntCommand(int& cmd);
 public:
     Controller();
     Controller(Community* comm);
