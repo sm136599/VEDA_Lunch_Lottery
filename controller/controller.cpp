@@ -160,7 +160,7 @@ void Controller::processShuffle() {
     community->makeParty();
     // 만들어진 파티 보여주기
     vector< vector<string> > party = community->getParty();
-    cout << "==========지난 주==========" << endl;
+    cout << "================지난 주================" << endl;
     for (int i = 0;i < party.size(); i++) {
         cout << i + 1 << "조 : ";
         for (const auto& person : party[i]) {
@@ -168,7 +168,7 @@ void Controller::processShuffle() {
         }
         cout << endl;
     }
-    cout << "==========이번 주==========" << endl;
+    cout << "================이번 주================" << endl;
     party = community->getNextParty();
     for (int i = 0;i < party.size(); i++) {
         cout << i + 1 << "조 : ";
