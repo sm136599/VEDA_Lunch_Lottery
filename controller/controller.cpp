@@ -113,6 +113,12 @@ void Controller::processClassCreation() {
             setView(mainMenuView);
             break;
         }
+    case 4: {
+        community->setCohort("");
+        community->setGroup("");
+        setView(mainMenuView);
+        return;
+    }
     default:
         break;
     }
