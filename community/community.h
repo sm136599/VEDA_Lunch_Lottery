@@ -9,7 +9,7 @@ using namespace std;
 //#include "../headers.h"
 #include "../utility/fileIO.h"
 
-#define FILEPATH "./data/" + this->cohort + "_" + this->group + ".csv"
+#define FILEPATH "./data/" + this->cohort + "_" + this->group + ".txt"
 #define DELIMITER ','
 
 class Community {
