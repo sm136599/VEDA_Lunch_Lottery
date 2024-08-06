@@ -4,11 +4,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
-
-#ifdef _WIN32
-#include <conio.h>
-#endif
-
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 using namespace std;
 
 #include "../community/communityHeader.h"

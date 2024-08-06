@@ -1,9 +1,5 @@
-#include <iostream>
-#include <string>
-#include <vector>
-using namespace std;
-#include "../headers.h"
 #include "community.h"
+using namespace std;
 
 Community::Community() {
     cohort = "";    // 
