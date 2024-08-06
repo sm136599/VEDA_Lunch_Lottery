@@ -102,7 +102,7 @@ void Controller::processClassCreation() {
                 cout << "기수와 반 모두 입력해주세요" << endl;
                 return;
             }
-            string fileName = "./data/" + community->getCohort() + "_" + community->getGroup() + ".csv";
+            string fileName = "./data/" + community->getCohort() + "_" + community->getGroup() + ".txt";
             ofstream fout; 
             fout.open(fileName);
             fout << "# 데이터 입력 (지우고 작성해주세요)" << endl;
@@ -179,7 +179,7 @@ void Controller::processShuffle() {
     }
     cout << "위의 이번 주 조합이 저장됩니다. 지난 주 기록은 사라집니다." << endl;
     pause;
-    writeFile(("./data/" + community->getCohort() + "_" + community->getGroup() + ".csv").c_str(), ',', community->getNextParty());
+    writeFile(("./data/" + community->getCohort() + "_" + community->getGroup() + ".txt").c_str(), ',', community->getNextParty());
     community->loadStudents();
     setView(mainMenuView);
 }
