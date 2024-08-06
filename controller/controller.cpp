@@ -151,6 +151,12 @@ void Controller::processClassSelection() {
 
 }
 void Controller::processShuffle() {
+    if (community->getCohort() == "" || community->getGroup() == "") {
+        cout << "선택된 반이 없습니다." << endl << "반을 선택하고 섞기를 실행해주세요." << endl;
+        pause;
+        setView(mainMenuView);
+        return;
+    }
     community->makeParty();
     // 만들어진 파티 보여주기
     vector< vector<string> > party = community->getParty();
